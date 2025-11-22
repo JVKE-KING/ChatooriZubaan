@@ -1,0 +1,394 @@
+<style>
+  .modal-header {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .carousel-inner img {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .carousel-item {
+    position: relative;
+  }
+
+  .carousel-caption {
+    position: absolute;
+    top: 0;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5) !important;
+  }
+
+  main h2 {
+    font-size: 70px !important;
+    color: #ff5600 !important;
+    font-family: "Lora", serif;
+    font-weight: 400 !important;
+    border-bottom: 5px dashed #ff5600 !important;
+  }
+  main p {
+    color: bisque !important;
+    font-size: 20px;
+    font-family: "Fira Code", monospace !important;
+  }
+
+  .btn-group {
+    margin-top: 20px !important;
+  }
+
+  .btn {
+    margin: 10px !important;
+    padding: 15px 50px !important;
+    font-size: 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .btn1 {
+    background-color: none;
+    border: 1px solid #ff5600 !important ;
+    color: #fff !important;
+  }
+
+  .btn1:hover {
+    background-color: #ff5600 !important;
+    transition: 0.3s ease-in-out;
+  }
+
+  @media (max-width: 800px) {
+    main h2 {
+      font-size: 40px !important;
+    }
+    main p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    main h2 {
+      font-size: 30px !important;
+    }
+    main p {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<!-- Log-in Modal -->
+<div class="modal fade" id="logInModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-white bg-dark">
+        <h1
+          class="modal-title fs-5"
+          id="logInModalLabel"
+          style="margin-bottom: 30px"
+        >
+          Welcome Back!
+        </h1>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/login">
+          <div class="form-group mb-3">
+            <label for="login-username" class="fw-bold">User Email</label>
+            <input
+              type="text"
+              id="login-username"
+              name="email"
+              class="form-control rounded-pill p-2"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="password" class="fw-bold">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control rounded-pill p-2"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div class="text-end mb-3">
+            <a href="/forgetPassword" class="text-primary text-decoration-none">
+              Forgot Password?
+            </a>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary w-100 rounded-pill fw-bold"
+            >
+              Log In
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0 d-flex bg-dark justify-content-center">
+        <p class="mb-0 text-light">
+          Don't have an account?
+          <a
+            href="#"
+            class="text-primary fw-bold ms-3"
+            data-bs-toggle="modal"
+            data-bs-target="#signUpModal"
+            >Sign Up</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signUpModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-white">
+        <h1
+          class="modal-title fs-5"
+          id="signUpModalLabel"
+          style="margin-bottom: 30px"
+        >
+          Create an Account
+        </h1>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/register">
+          <div class="form-group mb-3">
+            <label for="signup-username" class="fw-bold">Username</label>
+            <input
+              type="text"
+              id="signup-username"
+              name="username"
+              class="form-control rounded-pill p-2"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="signup-email" class="fw-bold">Email</label>
+            <input
+              type="email"
+              id="signup-email"
+              name="email"
+              class="form-control rounded-pill p-2"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group mb-3 position-relative">
+            <label for="signup-password" class="fw-bold">Password</label>
+            <div class="input-group">
+              <input
+                type="password"
+                id="signup-password"
+                name="password"
+                class="form-control rounded-pill p-2 pe-5"
+                placeholder="Create a password"
+                required
+              />
+              <span
+                class="position-absolute end-0 top-50 translate-middle-y me-3 cursor-pointer"
+                onclick="toggleSignUpPassword()"
+              >
+                <i id="signUpEyeIcon" class="fas fa-eye-slash"></i>
+              </span>
+            </div>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="termsCheck"
+              required
+            />
+            <label class="form-check-label" for="termsCheck">
+              I agree to the
+              <a href="#" class="text-primary fw-bold">Terms & Conditions</a>
+            </label>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary w-100 rounded-pill fw-bold"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0 d-flex bg-dark justify-content-center">
+        <p class="mb-0 text-light">
+          Already have an account?
+          <a
+            href="#"
+            class="text-primary fw-bold ms-3"
+            data-bs-toggle="modal"
+            data-bs-target="#logInModal"
+            >Log In</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container-fluid p-0">
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="../images/slider_img_01.jpeg"
+          class="d-block w-100"
+          alt="Slide 1"
+        />
+        <div class="carousel-caption" style="width: 100vw">
+          <h2>Welcome to Our Website</h2>
+          <p>Discover amazing content and enjoy the experience.</p>
+          <div class="btn-group">
+            <button
+              class="btn btn1"
+              data-bs-toggle="modal"
+              data-bs-target="#logInModal"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#signUpModal"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../images/slider_img_02.avif"
+          class="d-block w-100"
+          alt="Slide 2"
+        />
+        <div class="carousel-caption">
+          <h2>Explore Our Features</h2>
+          <p>Seamless navigation and exciting features await you.</p>
+          <div class="btn-group">
+            <button
+              class="btn btn1"
+              data-bs-toggle="modal"
+              data-bs-target="#logInModal"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#signUpModal"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../images/slider_img_03.webp"
+          class="d-block w-100"
+          alt="Slide 3"
+        />
+        <div class="carousel-caption">
+          <h2>Join Us Today</h2>
+          <p>Sign up now and be part of our growing community.</p>
+          <div class="btn-group">
+            <button
+              class="btn btn1"
+              data-bs-toggle="modal"
+              data-bs-target="#logInModal"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#signUpModal"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

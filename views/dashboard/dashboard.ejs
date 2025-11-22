@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trending Items</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css"
+    />
+
+    <style>
+      body {
+        background-color: #20304c !important;
+        color: #fff !important;
+        font-family: "Arial", sans-serif;
+      }
+
+      .dashboard {
+        padding-top: 100px;
+      }
+      .table-container {
+        width: 100%;
+        height: 75vh;
+        background-color: #0c1a32;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+      }
+      .table-responsive {
+        overflow-x: hidden;
+      }
+      table {
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      thead {
+        background-color: #1d2a47;
+        color: #f8f9fa;
+      }
+      tbody tr:hover {
+        background-color: #254068;
+        transition: 0.3s ease-in-out;
+      }
+      th,
+      td {
+        text-align: center;
+        padding: 12px;
+      }
+      img {
+        width: 80px;
+        border-radius: 8px;
+        transition: transform 0.3s;
+      }
+      img:hover {
+        transform: scale(1.1);
+      }
+      h2 {
+        text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+      }
+
+      @media (max-width: 991px) {
+        .mobile {
+          width: 100vw;
+          position: fixed;
+          left: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        .mobile {
+          padding-left: 0px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 p-0">
+          <%- include ("dashboard-common/left_menu") %>
+        </div>
+        <div class="col-9 p-0">
+          <%- include ("dashboard-common/header") %>
+          <div class="container-fluid dashboard px-5">
+            <div class="mobile">
+              <h2 class="text-center mb-4">🔥 Trending Items 🔥</h2>
+              <div class="table-container table-responsive">
+                <!-- ✅ Added an ID to the table -->
+                <table id="myTable" class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="col-1 text-center">Id</th>
+                      <th class="col-6 text-center">Name</th>
+                      <th class="col-3 text-center">Email</th>
+                      <th class="col-2 text-center">Role</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Example data (you should replace it with dynamic content) -->
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <img
+                          src="https://via.placeholder.com/80"
+                          alt="Item Image"
+                        />
+                      </td>
+                      <td>Item Name 1</td>
+                      <td>$50</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <img
+                          src="https://via.placeholder.com/80"
+                          alt="Item Image"
+                        />
+                      </td>
+                      <td>Item Name 2</td>
+                      <td>$70</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- ✅ Fixed DataTable Initialization -->
+    <script>
+      $(document).ready(function () {
+        $("#myTable").DataTable({
+          paging: true,
+          searching: true,
+          ordering: true,
+          info: true,
+          lengthMenu: [5, 10, 25, 50],
+          language: {
+            search: "Search Items:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

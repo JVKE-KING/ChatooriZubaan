@@ -1,0 +1,47 @@
+/* General Reset */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Our Story Section */
+.story {
+  background: linear-gradient(to right, #1a1a1a, #3b3b3b);
+  color: #fff;
+  padding: 80px 0;
+}
+
+.story h2 {
+  /* margin-top: 30px; */
+  font-size: 3rem;
+  color: #c49b63;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+}
+
+.story p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 0 30px;
+}
+
+.story img {
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.story img:hover {
+  transform: scale(1.05);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .story p {
+    text-align: center;
+    padding: 0 15px;
+  }
+}

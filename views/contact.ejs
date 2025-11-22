@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-------------------------------------------------- HEADER_SECTION ------------------------------------------------------->
+
+    <%- include("./common/header") %>
+
+    <!------------------------------------------------ CAROUSEL_SECTION ------------------------------------------------------->
+
+    <%- include("./common/carousel") %>
+
+    <!----------------------------------------------- CONTACT_FORM_SECTION ---------------------------------------------------->
+
+    <section class="container-fluid contact-section">
+      <div class="row">
+        <!-- Contact Info -->
+        <div class="col-12 col-lg-6 contact-info">
+          <h3>Contact Information</h3>
+          <p>Feel free to reach out to us anytime!</p>
+
+          <div class="info-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <strong>Address: &nbsp;</strong> 198 West 21th Street, Suite 721,
+            New York, NY 10016
+          </div>
+
+          <div class="info-box">
+            <i class="fas fa-phone"></i>
+            <strong>Phone:&nbsp;</strong> +91 9266 540 690
+          </div>
+
+          <div class="info-box">
+            <i class="fas fa-envelope"></i>
+            <strong>Email:&nbsp;</strong> chatorizubaan@gmail.com
+          </div>
+
+          <div class="info-box">
+            <i class="fas fa-globe"></i>
+            <strong>Website:&nbsp;</strong> chatorizubaan.com
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-12 col-lg-6 contact-form">
+          <h3>Send Us a Message</h3>
+          <form method="post" action="/contact">
+            <div class="input-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+
+            <div class="input-group">
+              <input type="email" name="email" placeholder="Your Email" required />
+            </div>
+
+            <div class="input-group">
+              <input type="number" name="number" placeholder="Your Phone Number" required />
+            </div>
+
+            <div class="input-group">
+              <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="send">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------------------------------ FOOTER_SECTION --------------------------------------------------------->
+
+    <%- include ("./common/footer") %>
+  </body>
+</html>

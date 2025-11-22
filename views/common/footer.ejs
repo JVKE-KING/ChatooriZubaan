@@ -1,0 +1,282 @@
+<style>
+  /* Footer Styling */
+  .footer-area {
+    background: url("assets/img/gallery/section_bg02.png") no-repeat center
+      center/cover;
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+  }
+
+  /* Footer Logo */
+  .footer-logo img {
+    width: 180px;
+    margin-bottom: 20px;
+  }
+
+  /* Footer Title */
+  .footer-tittle h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    position: relative;
+    /* display: inline-block;s */
+  }
+
+  .footer-tittle h4::after {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #ffcc00;
+    margin-top: 5px;
+  }
+
+  /* Footer Links */
+  .footer-tittle ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-tittle ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-tittle ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  .footer-tittle ul li a:hover {
+    color: #d414c9;
+    padding-left: 5px;
+  }
+
+  /* Instagram Feed */
+  .instagram-gellay ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 8px;
+  }
+
+  .instagram-gellay ul li {
+    list-style: none;
+  }
+
+  .instagram-gellay ul li img {
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .instagram-gellay ul li img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Social Icons */
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-social span {
+    font-weight: 600;
+    color: #ffcc00;
+  }
+
+  .footer-social a {
+    color: #fff;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+
+  .footer-social a:hover {
+    color: #d414c9;
+    transform: scale(1.2);
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    color: #bbb;
+    font-size: 14px;
+  }
+
+  .footer-bottom p a {
+    color: #d414c9;
+    text-decoration: none;
+  }
+
+  .footer-bottom p a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-area {
+      text-align: center;
+    }
+
+    .footer-social {
+      justify-content: center;
+    }
+
+    .instagram-gellay ul {
+      justify-content: center;
+    }
+  }
+</style>
+<!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<footer>
+  <!--? Footer Start-->
+  <div
+    class="footer-area section-bg"
+    data-background="assets/img/gallery/section_bg02.png"
+    style="background-image: url('../images/footer_bg_img.webp')"
+  >
+    <div class="container">
+      <div class="footer-top footer-padding">
+        <div class="row d-flex justify-content-between">
+          <div class="col-xl-4 col-lg-4 col-md-5 col-sm-8">
+            <div class="single-footer-caption mb-50">
+              <!-- logo -->
+              <div class="footer-logo">
+                <a href="index.html"
+                  ><img src="../images/logo.webp" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-5 col-sm-6">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Navigation</h4>
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/menu">Menu</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-5 col-sm-6">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">signup</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Instagram -->
+          <div class="col-xl-4 col-lg-4 col-md-5 col-sm-7">
+            <div class="single-footer-caption mb-50">
+              <div class="footer-tittle">
+                <h4>Instagram Feed</h4>
+              </div>
+              <div class="instagram-gellay">
+                <ul class="insta-feed">
+                  <li class="col-lg-3 mx-2 my-2">
+                    <a href="#"
+                      ><img
+                        src="../images/footer_img1.webp"
+                        alt=""
+                        class="img-responsive"
+                    /></a>
+                  </li>
+                  <li class="col-lg-3 mx-2 my-2">
+                    <a href="#"
+                      ><img
+                        src="../images/footer_img2.webp"
+                        alt=""
+                        class="img-responsive"
+                    /></a>
+                  </li>
+                  <li class="col-lg-3 mx-2 my-2">
+                    <a href="#"
+                      ><img
+                        src="../images/footer_img3.webp"
+                        alt=""
+                        class="img-responsive"
+                    /></a>
+                  </li>
+                  <li class="col-lg-3 mx-2 my-2">
+                    <a href="#"
+                      ><img
+                        src="../images/footer_img4.webp"
+                        alt=""
+                        class="img-responsive"
+                    /></a>
+                  </li>
+                  <li class="col-lg-3 mx-2 my-2">
+                    <a href="#"
+                      ><img
+                        src="../images/footer_img5.webp"
+                        alt=""
+                        class="img-responsive"
+                    /></a>
+                  </li>
+                  <li class="col-lg-3 mx-2 my-2">
+                    <a href="#"
+                      ><img
+                        src="../images/footer_img6.webp"
+                        alt=""
+                        class="img-responsive"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row d-flex justify-content-between align-items-center">
+          <div class="col-xl-9 col-lg-8">
+            <div class="footer-copy-right">
+              <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright © 2025 All rights reserved
+                <i class="fa fa-heart" aria-hidden="true"></i> by
+                <a href="#" target="_blank">Chatori Zubaan</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4">
+            <!-- Footer Social -->
+            <div class="footer-social f-right">
+              <span>Follow Us</span>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/sai4ull"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"><i class="fas fa-globe"></i></a>
+              <a href="https://www.instagram.com/coded__beats/?next=%2F&hl=en"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End-->
+</footer>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="about.css" />
+    <!-- Include Font Awesome (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-------------------------------------------------- HEADER_SECTION ------------------------------------------------------->
+
+    <%- include("./common/header") %>
+
+    <!------------------------------------------------ CAROUSEL_SECTION ------------------------------------------------------->
+
+    <%- include("./common/carousel") %>
+
+    <section class="container-fluid about">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-6 text-center">
+          <img
+            src="./images/about1.webp"
+            class="img-fluid rounded shadow-lg"
+            alt="Delicious Food"
+          />
+        </div>
+        <div class="col-12 col-lg-6 text-lg-start text-center about-text">
+          <span class="highlight">About Our Restaurant</span>
+          <h2 class="fw-bold">We Provide Good Food For Your Family!</h2>
+          <p>
+            Indulge in a delightful culinary journey where flavor meets passion.
+            We take pride in serving mouthwatering dishes made from the freshest
+            ingredients, bringing warmth and joy to every table. Whether it’s a
+            casual meal or a special celebration, our menu is crafted to satisfy
+            your cravings while keeping taste and health in perfect harmony.
+            Because every great moment deserves great food!
+          </p>
+          <a href="menu" class="btn btn-primary mt-3 px-4 py-2"
+            >Explore Our Menu</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------- BOOK_TABLE_SECTION -------------------------------------------------------->
+
+    <%- include("common/book_table") %> <%- include ("./common/chef") %> <%-
+    include("./common/service") %> <%- include("./common/footer") %>
+  </body>
+</html>

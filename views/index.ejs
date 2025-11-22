@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chatooriZubaan</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Include Font Awesome (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-------------------------------------------------- HEADER_SECTION ------------------------------------------------------->
+
+    <%- include("./common/header") %>
+
+    <!------------------------------------------------ CAROUSEL_SECTION ------------------------------------------------------->
+
+    <%- include("./common/carousel") %>
+
+    <!------------------------------------------------- OUR_STORY_SECTION ----------------------------------------------------->
+
+    <section class="container-fluid m-0 story">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <img
+            src="./images/our_story_img.webp"
+            class="img-fluid"
+            alt="Our Story"
+          />
+        </div>
+        <div class="col-sm-12 col-lg-6 story">
+          <h2>Our Story</h2>
+          <p>
+            On her way she met a copy. The copy warned the Little Blind Text,
+            that where it came from it would have been rewritten a thousand
+            times and everything that was left from its origin would be the word
+            "and" and the Little Blind Text should turn around and return to its
+            own, safe country. But nothing the copy said could convince her and
+            so it didn’t take long until a few insidious Copy Writers ambushed
+            her, made her drunk with Longe and Parole and dragged her into their
+            agency, where they abused her for their.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!---------------------------------------------- COMMON_MENU_SECTION ------------------------------------------------------>
+
+    <%- include("./common/menu") %>
+
+    <!--------------------------------------------- MASTER_CHEF_SECTION ------------------------------------------------------->
+
+    <%- include("./common/chef") %>
+
+    <!--------------------------------------------- BOOK_TABLE_SECTION -------------------------------------------------------->
+
+    <%- include("./common/book_table") %>
+
+    <!------------------------------------------- OUR_SERVICE_SECTION --------------------------------------------------------->
+
+    <%- include("./common/service") %>
+
+    <!------------------------------------------------ FOOTER_SECTION --------------------------------------------------------->
+
+    <%- include("./common/footer") %>
+  </body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starter Menu</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
+    <!------------------------------------------------- HEADER_SECTION ------------------------------------------------------->
+
+    <%- include("./common/header") %>
+
+    <!------------------------------------------------ CAROUSEL_SECTION ------------------------------------------------------->
+
+    <%- include("./common/carousel") %>
+
+    <!---------------------------------------------- COMMON_MENU_SECTION ------------------------------------------------------>
+
+    <%- include("./common/menu") %>
+
+    <!--------------------------------------------- STARTER_SECTION ---------------------------------------------------------->
+
+    <section class="menu-section container-fluid py-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="menu-title">Our Delicious Starters</h2>
+          <p class="menu-subtitle">Tantalizing flavors to begin your feast!</p>
+        </div>
+      </div>
+    <% if(menuItemDisplay.length>0){%>
+
+      <div class="row g-3">
+        <% for(var i = 0; i < menuItemDisplay.length; i++) { %>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="menu-card">
+              <img src="<%= menuItemDisplay[i].image %>">
+              <div class="overlay">
+                <h4><%= menuItemDisplay[i].dishName %></h4>
+                <p><%= menuItemDisplay[i].offer %></p>
+                <span class="price text-success"><%= menuItemDisplay[i].price %></span>
+                <a href="/dashboard_product_details/<%= menuItemDisplay[i]._id %>">
+                  <button class="mt-2">More Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+      
+      </div>
+      <% } else { %>
+        No record found
+      
+      <%} %>
+    </section>
+
+    <!--------------------------------------------- BOOK_TABLE_SECTION -------------------------------------------------------->
+
+    <%- include("common/book_table") %>
+
+    <!---------------------------------------------- MAIN_MENU_SECTION ------------------------------------------------------->
+
+    <section class="menu-section container-fluid py-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="menu-title">Main Course</h2>
+          <p class="menu-subtitle">
+            Delicious and hearty meals to satisfy your hunger!
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Main Dish Item -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/butter chicken.jpg" alt="Butter Chicken" />
+            <div class="overlay">
+              <h4>Butter Chicken</h4>
+              <p>Creamy tomato-based chicken curry</p>
+              <span class="price">Rs.249</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/palak panner.jpg" alt="Palak Paneer" />
+            <div class="overlay">
+              <h4>Palak Paneer</h4>
+              <p>Spinach & cottage cheese delight</p>
+              <span class="price">Rs.199</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/hyderabadi biriyani.jpg" alt="Biryani" />
+            <div class="overlay">
+              <h4>Hyderabadi Biryani</h4>
+              <p>Spiced basmati rice with tender chicken</p>
+              <span class="price">Rs.299</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/dal makhani.jpg" alt="Dal Makhani" />
+            <div class="overlay">
+              <h4>Dal Makhani</h4>
+              <p>Slow-cooked black lentils with cream</p>
+              <span class="price">Rs.169</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="menu-card">
+            <img src="./images/egg curry.jpg" alt="Egg Curry" />
+            <div class="overlay">
+              <h4>Egg Curry</h4>
+              <p>Hard-boiled eggs in a rich, spiced onion-tomato gravy.</p>
+              <span class="price">Rs.126</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------- DINNER_MENU_SECTION ------------------------------------------------------->
+
+    <section class="menu-section container-fluid py-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="menu-title">Dinner Menu</h2>
+          <p class="menu-subtitle">
+            Wholesome flavors to end your day on a delicious note!
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="menu-card">
+            <img
+              src="./images/Paneer Butter Masala with Roti.jpg"
+              alt="Paneer Butter Masala"
+            />
+            <div class="overlay">
+              <h4>Paneer Butter Masala with Roti</h4>
+              <p>
+                A creamy, buttery tomato-based curry with soft paneer cubes.
+              </p>
+              <span class="price">Rs.249</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img
+              src="./images/Veg Pulao with Raita.jpg"
+              alt="Veg Pulao with Raita"
+            />
+            <div class="overlay">
+              <h4>Veg Pulao with Raita</h4>
+              <p>
+                Fragrant spiced rice with veggies, paired with creamy raita.
+              </p>
+              <span class="price">Rs.178</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/allo paranths.jpg" alt="Aloo Paratha" />
+            <div class="overlay">
+              <h4>Aloo Paratha with Butter</h4>
+              <p>Spiced potato-stuffed flatbread with melting butter.</p>
+              <span class="price">Rs.49</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/rajma chawal.jpg" alt="Rajma Chawal" />
+            <div class="overlay">
+              <h4>Rajma Chawal</h4>
+              <p>Hearty kidney bean curry served with steamed rice.</p>
+              <span class="price">Rs.179</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/kadhai pakora.jpg" alt="Kadhai Pakoras" />
+            <div class="overlay">
+              <h4>Kadhi Pakoras</h4>
+              <p>Tangy yogurt curry with spiced gram flour fritters.</p>
+              <span class="price">Rs.127</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="menu-card">
+            <img src="./images/mix veg.jpg" alt="Mix Veg" />
+            <div class="overlay">
+              <h4>Mix Veg</h4>
+              <p>
+                A flavorful medley of seasonal vegetables cooked with spices.
+              </p>
+              <span class="price">Rs.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------- DESSERT_MENU_SECTION ------------------------------------------------------>
+
+    <section class="menu-section container-fluid py-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="menu-title">Dessert Menu</h2>
+          <p class="menu-subtitle">
+            A sweet course served at the end of a meal, often consisting of
+            cake, pie, pudding, ice cream, or fruit.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/gulab jamun.jpg" alt="Gulab Jamun" />
+            <div class="overlay">
+              <h4>Gulab Jamun (4 pcs)</h4>
+              <p>Soft, deep-fried milk dumplings soaked in sweet syrup.</p>
+              <span class="price">Rs.107</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/ras malai.jpg" alt="Ras Malai" />
+            <div class="overlay">
+              <h4>Ras Malai (4 pcs)</h4>
+              <p>
+                Spongy cottage cheese discs soaked in saffron-infused sweet
+                milk.
+              </p>
+              <span class="price">Rs.129</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="menu-card">
+            <img src="./images/Kesar Pista Kulfi.jpg" alt="Kesar Pista Kulfi" />
+            <div class="overlay">
+              <h4>Kesar Pista Kulfi</h4>
+              <p>Creamy, dense frozen dessert with saffron and pistachios.</p>
+              <span class="price">Rs.149</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img
+              src="./images/Chocolate Brownie with Ice Cream.jpg"
+              alt="Chocolate Brownie with Ice Cream"
+            />
+            <div class="overlay">
+              <h4>Chocolate Brownie with Ice Cream</h4>
+              <p>
+                Warm, gooey brownie topped with a scoop of cold, creamy ice
+                cream. Pure bliss!
+              </p>
+              <span class="price">Rs.180</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="menu-card">
+            <img src="./images/Gajar Ka Halwa.jpg" alt="Gajar Ka Halwa" />
+            <div class="overlay">
+              <h4>Gajar Ka Halwa</h4>
+              <p>
+                A rich, sweet carrot dessert flavored with cardamom and
+                garnished with nuts.
+              </p>
+              <span class="price">Rs.139</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="menu-card">
+            <img src="./images/Fruit Custard.jpg" alt="Fruit Custard" />
+            <div class="overlay">
+              <h4>Fruit Custard</h4>
+              <p>
+                A delightful dessert of mixed fruits in creamy, sweet custard.
+              </p>
+              <span class="price">Rs.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------------------------------ FOOTER_SECTION --------------------------------------------------------->
+
+    <%- include("./common/footer") %>
+  </body>
+</html>

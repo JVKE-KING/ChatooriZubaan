@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu List</title>
+
+    <style>
+      /* Import Google Font */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      /* General Styling */
+      body {
+        background-color: #20304c !important;
+        color: #fff !important;
+        font-family: "Arial", sans-serif;
+      }
+
+      .dashboard {
+        padding-top: 100px;
+      }
+
+      h2 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 2rem;
+        text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #eae2e2;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="file"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      textarea {
+        resize: vertical;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .form-section {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 p-0">
+          <%- include ("dashboard-common/left_menu") %>
+        </div>
+        <div class="col-9 p-0">
+          <%- include ("dashboard-common/header") %>
+          <div class="container-fluid px-5 dashboard">
+            <div class="mobile">
+              <h2>Menu List</h2>
+              <form
+                action="/menuItem"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <!-- Dish Name -->
+                <label for="dishName">Dish Name:</label><br />
+                <input
+                  type="text"
+                  id="dishName"
+                  name="dishName"
+                  required
+                /><br /><br />
+
+                <!-- Category -->
+                <label for="category">Category:</label><br />
+                <select id="category" name="category" required>
+                  <option value="appetizer">Appetizer</option>
+                  <option value="main_course">Main Course</option>
+                  <option value="dessert">Dessert</option>
+                  <option value="beverage">Beverage</option></select
+                ><br /><br />
+
+                <!-- Price -->
+                <label for="price">Price (in ₹):</label><br />
+                <div style="display: flex; align-items: center">
+                  <input
+                    type="number"
+                    id="price"
+                    name="price"
+                    step="0.01"
+                    required
+                  />
+                </div>
+                <br /><br />
+
+                <!-- Offer -->
+                <label for="offer">Special Offer (Optional):</label><br />
+                <input
+                  type="text"
+                  id="offer"
+                  name="offer"
+                  placeholder="E.g., 20% Off, Buy 1 Get 1"
+                /><br /><br />
+
+                <!-- Availability -->
+                <label for="availability">Availability:</label>
+                <select id="availability" name="availability">
+                  <option value="Available">Available</option>
+                  <option value="Not Available">Not Available</option></select
+                ><br /><br />
+
+                <!-- Ingredients -->
+                <label for="ingredients">Ingredients (comma-separated):</label
+                ><br />
+                <input
+                  type="text"
+                  id="ingredients"
+                  name="ingredients"
+                  required
+                /><br /><br />
+
+                <!-- Description -->
+                <label for="description">Description:</label><br />
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="5"
+                  required
+                ></textarea
+                ><br /><br />
+
+                <!-- Upload Image -->
+                <label for="image">Upload Image of Dish:</label><br />
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  required
+                /><br /><br />
+
+                <!-- Spicy Level -->
+                <label for="spicyLevel">Spicy Level:</label><br />
+                <input type="radio" id="mild" name="spicyLevel" value="mild" />
+                <label for="mild">Mild</label><br />
+                <input
+                  type="radio"
+                  id="medium"
+                  name="spicyLevel"
+                  value="medium"
+                />
+                <label for="medium">Medium</label><br />
+                <input
+                  type="radio"
+                  id="spicy"
+                  name="spicyLevel"
+                  value="spicy"
+                />
+                <label for="spicy">Spicy</label><br /><br />
+
+                <!-- Vegan Option -->
+                <label>
+                  <input type="checkbox" id="vegan" name="vegan" />
+                  Vegan Friendly </label
+                ><br /><br />
+
+                <!-- Submit Button -->
+                <button type="submit">Add Menu Item</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

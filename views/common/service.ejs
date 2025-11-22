@@ -1,0 +1,128 @@
+<style>
+  /* Services Section */
+  .service {
+    text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+  }
+
+  .service span {
+    color: #ff6f61 !important;
+    display: block;
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .service h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+
+  /* Card Styling */
+  .cardContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 350px;
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Icon Styling */
+  .card img {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .card:hover i {
+    color: #c49b63;
+  }
+
+  /* Card Titles */
+  .card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  /* Card Text */
+  .card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card {
+      width: 90%;
+    }
+  }
+</style>
+
+<section class="container service">
+  <span>Services We Offer</span>
+  <h2>Our Best Services</h2>
+  <div class="row justify-content-center" style="max-width: 100vw">
+    <div class="col-12 col-md-6 col-lg-4 cardContainer">
+      <div class="card">
+        <img src="./images/cheif.png" alt="" />
+        <h3>Best Chef</h3>
+        <p>
+          Our chief is a visionary leader dedicated to excellence, innovation,
+          and customer satisfaction. With a passion for delivering the best,
+          they ensure top-quality service, expert guidance, and a commitment to
+          meeting your needs. Experience leadership that drives success!
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 cardContainer">
+      <div class="card">
+        <img src="./images/quality food.png" alt="" />
+        <h3>Quality Food</h3>
+        <p>
+          Our chef crafts every dish with passion, precision, and the finest
+          ingredients. Committed to quality and taste, we bring you flavors that
+          delight your senses and leave a lasting impression. Experience the art
+          of exceptional dining!
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 cardContainer">
+      <div class="card">
+        <img src="./images/cheif.png" alt="" />
+        <h3>Perfect Cook</h3>
+        <p>
+          Our chef is a master of flavors, blending fresh ingredients with skill
+          and creativity to deliver unforgettable dishes. With a passion for
+          quality and perfection, every meal is crafted to delight your taste
+          buds. Experience the best in culinary excellence!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

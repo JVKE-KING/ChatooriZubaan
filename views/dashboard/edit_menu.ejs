@@ -1,0 +1,273 @@
+<style>
+  /* Import Google Font */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+  /* General Styling */
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding: 0;
+    margin: 0;
+  }
+
+  form {
+    width: 60%;
+    margin: auto;
+    background-color: #20304c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .dashboard {
+    padding-top: 100px;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #eae2e2;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="file"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .form-section {
+    margin-bottom: 20px;
+  }
+
+  /* Spacing for form fields */
+  .form-section input[type="text"],
+  .form-section input[type="number"],
+  .form-section textarea,
+  .form-section select {
+    margin-bottom: 20px;
+  }
+
+  /* For better spacing between form sections */
+  .form-section {
+    margin-bottom: 25px;
+  }
+
+  /* Label enhancements */
+  label {
+    color: #eae2e2;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  /* Form input styling */
+  .form-section input[type="text"],
+  .form-section input[type="number"],
+  .form-section select,
+  .form-section textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  /* Hover effect for form fields */
+  input[type="text"]:hover,
+  input[type="number"]:hover,
+  textarea:hover,
+  select:hover {
+    border-color: #007bff;
+  }
+
+  /* Flexbox for label and input alignment */
+  .form-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Styling for input file */
+  input[type="file"] {
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  input[type="file"]:focus {
+    border-color: #007bff;
+  }
+</style>
+
+<form action="/menuItem" method="post" enctype="multipart/form-data">
+  <!-- Dish Name -->
+  <label for="dishName">Dish Name:</label><br />
+  <input
+    type="text"
+    id="dishName"
+    name="dishName"
+    value="<%= editMenuItem ? editMenuItem.dishName : '' %>"
+    required
+  />
+
+  /><br /><br />
+
+  <!-- Category -->
+  <label for="category">Category:</label><br />
+  <select
+    id="category"
+    name="category"
+    value="<%=editMenuItem.category %>"
+    required
+  >
+    <option value="appetizer">Appetizer</option>
+    <option value="main_course">Main Course</option>
+    <option value="dessert">Dessert</option>
+    <option value="beverage">Beverage</option></select
+  ><br /><br />
+
+  <!-- Price -->
+  <label for="price">Price (in ₹):</label><br />
+  <div style="display: flex; align-items: center">
+    <input
+      type="number"
+      id="price"
+      name="price"
+      value="<%=editMenuItem.price %>"
+      step="0.01"
+      required
+    />
+  </div>
+  <br /><br />
+
+  <!-- Offer -->
+  <label for="offer">Special Offer (Optional):</label><br />
+  <input
+    type="text"
+    id="offer"
+    name="offer"
+    value="<%=editMenuItem.offer %>"
+    placeholder="E.g., 20% Off, Buy 1 Get 1"
+  /><br /><br />
+
+  <!-- Availability -->
+  <label for="availability">Availability:</label>
+  <select
+    id="availability"
+    name="availability"
+    value="<%=editMenuItem.availability %>"
+  >
+    <option value="Available">Available</option>
+    <option value="Not Available">Not Available</option></select
+  ><br /><br />
+
+  <!-- Ingredients -->
+  <label for="ingredients">Ingredients (comma-separated):</label><br />
+  <input
+    type="text"
+    id="ingredients"
+    name="ingredients"
+    value="<%=editMenuItem.ingredients %>"
+    required
+  /><br /><br />
+
+  <!-- Description -->
+  <label for="description">Description:</label><br />
+  <textarea
+    id="description"
+    name="description"
+    value="<%=editMenuItem.description %>"
+    rows="5"
+    required
+  ></textarea
+  ><br /><br />
+
+  <!-- Upload Image -->
+  <label for="image">Upload Image of Dish:</label><br />
+  <input
+    type="file"
+    id="image"
+    name="image"
+    value="<%=editMenuItem.image %>"
+    required
+  /><br /><br />
+
+  <!-- Spicy Level -->
+  <label for="spicyLevel">Spicy Level:</label><br />
+  <input
+    type="radio"
+    id="mild"
+    name="spicyLevel"
+    value="<%=editMenuItem.spicyLevel %>"
+    value="mild"
+  />
+  <label for="mild">Mild</label><br />
+  <input type="radio" id="medium" name="spicyLevel" value="medium" />
+  <label for="medium">Medium</label><br />
+  <input type="radio" id="spicy" name="spicyLevel" value="spicy" />
+  <label for="spicy">Spicy</label><br /><br />
+
+  <!-- Vegan Option -->
+  <label>
+    <input
+      type="checkbox"
+      id="vegan"
+      name="vegan"
+      value="<%=editMenuItem.vegan %>"
+    />
+    Vegan Friendly </label
+  ><br /><br />
+
+  <!-- Submit Button -->
+  <button type="submit">Add Menu Item</button>
+</form>

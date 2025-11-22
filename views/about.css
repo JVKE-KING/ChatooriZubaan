@@ -1,0 +1,48 @@
+.about {
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #fff5e1, #ffe0b2);
+  border-radius: 10px;
+}
+
+.about img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+  padding: 2rem;
+}
+
+.about .highlight {
+  color: #ff5600;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about h2 {
+  font-size: 3.5rem;
+  color: #222;
+  margin-top: 10px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.about .btn {
+  background-color: #ff5600;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.about .btn:hover {
+  background-color: #ff3300;
+  transform: scale(1.05);
+}
