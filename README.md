@@ -26,7 +26,7 @@ The project combines basic frontend and backend in the same folders, there is no
 !. Clone the project:
 
 ```bash
-git clone https://github.com/JVKE-KING/chatoorizubaan.git
+git clone https://github.com/jvkedev/ChatooriZubaan.git
 ```
 
 2. Install dependencies:
