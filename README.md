@@ -60,4 +60,4 @@ http://localhost:8080
 This project is for educational purposes only.
 
 ## Author
-### JVKE
+### JvkeDev
